@@ -13,5 +13,7 @@
   "editor.tabSize": 2,
   "prettier.tabWidth": 2,
   // stylelint校验的文件格式
-  "stylelint.validate": ["css", "scss", "vue", "html"]
+  "stylelint.validate": ["css", "scss", "vue", "html"],
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }

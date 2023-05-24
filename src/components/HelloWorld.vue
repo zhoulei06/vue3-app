@@ -1,13 +1,21 @@
 <script setup lang="ts">
 import { ref } from "vue";
-
-defineProps<{ msg: string }>();
+interface PersonType {
+  name: string | number;
+  age: number;
+  msg: string;
+}
+const props = withDefaults(defineProps<PersonType>(), {
+  name: "哈哈",
+  age: 18,
+  msg: "你好啊",
+});
 
 const count = ref<number>(0);
 </script>
 
 <template>
-  <h1>{{ msg }}</h1>
+  <h1>{{ props.msg }}</h1>
 
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
@@ -29,6 +37,7 @@ const count = ref<number>(0);
     in your IDE for a better DX
   </p>
   <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <div>{{ props.name }}</div>
 </template>
 
 <style scoped lang="scss">
